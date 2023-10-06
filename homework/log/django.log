@@ -1,5 +1,0 @@
-INFO 2023-10-01 23:13:31,729 autoreload 13892 16288Watching for file changes with StatReloader
-INFO 2023-10-01 23:13:37,272 views 13892 16116 About page accessed
-INFO 2023-10-01 23:13:37,274 basehttp 13892 16116"GET /about/ HTTP/1.1" 200 285
-INFO 2023-10-01 23:13:44,954 views 13892 16116 Index page accessed
-INFO 2023-10-01 23:13:44,956 basehttp 13892 16116"GET / HTTP/1.1" 200 21
