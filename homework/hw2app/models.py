@@ -10,7 +10,7 @@ class Client(models.Model):
     regisrtation_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.name}, {self.email}, tel: {self.tel_number}, address: {self.address}</br>"
+        return f"{self.name}, {self.email}, tel: {self.tel_number}, address: {self.address}"
 
 
 class Product(models.Model):
@@ -21,7 +21,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.name}, price: {self.price}<br>"
+        return f"{self.name}, price: {self.price}"
 
 
 class Order(models.Model):
@@ -31,7 +31,7 @@ class Order(models.Model):
     total_price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
 
     def __str__(self):
-        return f'client: {self.client.name}, products: {", ".join([f"{product.name}, price: {product.price}" for product in self.products.all()])}, total_price: {self.total_price}<br>'
+        return f'client: {self.client.name}, products: {", ".join([f"{product.name}, price: {product.price}" for product in self.products.all()])}, total_price: {self.total_price}'
 
     def set_total_price(self):
         products = self.products.all()

@@ -1,0 +1,15 @@
+{% extends "hw2app/base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <div class='items'>
+        {% for order in orders %}
+            <div class='card center'>
+                <h3>Order from {{order.date_ordered }}</h3>
+                {% for product in order.products.all %}
+                    <p>{{product.name}}, price {{product.price}}</p>
+                {% endfor %}
+                <h4>Total: {{order.total_price}}</h4>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

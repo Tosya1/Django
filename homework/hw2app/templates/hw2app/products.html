@@ -1,0 +1,9 @@
+{% extends "hw2app/base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <div class='items'>
+        {% for product in products %}
+            <a class='item' href="{% url "product_by_id" product.id %}">{{product.name}}</a>
+        {% endfor %}
+    </div>
+{% endblock content %}
