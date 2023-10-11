@@ -1,0 +1,12 @@
+{% extends "hw2app/base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+<div class='card'>
+    <h3>Products you ordered in the last {{period}} days:</h3>
+    <div class='items'>
+        {% for product in products %}
+            <a class='button product_btn' href="{% url "product_by_id" product.id %}">{{product.name}}, price {{product.price}}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

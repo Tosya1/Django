@@ -1,0 +1,11 @@
+{% extends "hw2app/base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <div class='card'>
+        <h3>{{product.name}}</h3>
+        <p><span class='bold'>description:</span> {{product.description}}</p>
+        <p><span class='bold'>price:</span>  {{product.price}}</p>
+        <p><span class='bold'>amount:</span>  {{product.count}}</p>
+        <p><span class='bold'>created_at:</span>  {{product.created_at}}</p>
+    </div>
+{% endblock content %}
