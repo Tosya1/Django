@@ -156,6 +156,14 @@ LOGGING = {
             "level": "DEBUG",
             "propagate": True,
         },
+        "hw2app": {
+            "handlers": ["console", "file"],
+            "level": "DEBUG",
+            "propagate": True,
+        },
     },
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 

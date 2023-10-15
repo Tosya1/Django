@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from hw2app.models import Client, Product, Order
+from .forms import ImageForm, ProductForm
+
 
 # Create your views here.
 
@@ -70,4 +72,50 @@ def ordered_products_for_period(request, client_id, period):
             "products": products,
             "period": period,
         },
+    )
+
+
+def edit_product(request, product_id):
+    product = Product.objects.filter(pk=product_id).first()
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        message = "Data error"
+        if form.is_valid():
+            print(f"{form.cleaned_data}")
+            product = Product.objects.filter(pk=product_id).update(**form.cleaned_data)
+            message = "Product data updated"
+    else:
+        form = ProductForm(
+            initial={
+                "name": product.name,
+                "description": product.description,
+                "price": product.price,
+                "count": product.count,
+            }
+        )
+        message = "Edit product data"
+    return render(
+        request,
+        "hw2app/edit_product.html",
+        {"form": form, "title": "Edit product", "message": message},
+    )
+
+
+def upload_image(request, product_id):
+    if request.method == "POST":
+        form = ImageForm(request.POST, request.FILES)
+        message = "Loading error"
+        if form.is_valid():
+            image = form.cleaned_data["image"]
+            product = Product.objects.filter(pk=product_id).first()
+            product.image = image
+            product.save()
+            message = "Image saved "
+    else:
+        form = ImageForm()
+        message = "Upload product image"
+    return render(
+        request,
+        "hw2app/upload_image.html",
+        {"form": form, "title": "Upload image", "message": message},
     )

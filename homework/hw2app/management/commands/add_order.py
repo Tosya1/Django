@@ -21,6 +21,6 @@ class Command(BaseCommand):
         order.products.set(
             choices(Product.objects.all(), k=randint(1, product_count))
         )
-        order.date_ordered = datetime.now() - timedelta(days=365)
+        order.date_ordered = datetime.now() - timedelta(days=7)
         order.set_total_price()
         order.save()

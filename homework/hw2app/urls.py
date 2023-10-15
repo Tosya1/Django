@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -12,4 +14,10 @@ urlpatterns = [
     path('clients/<int:client_id>/products/week/', views.ordered_products_for_period, {'period': 7}, name='ordered_products_per_week'),
     path('clients/<int:client_id>/products/month/', views.ordered_products_for_period, {'period': 30}, name='ordered_products_per_month'),
     path('clients/<int:client_id>/products/year/', views.ordered_products_for_period, {'period': 365}, name='ordered_products_per_year'),
+    path('products/<int:product_id>/upload_image/', views.upload_image, name='upload_product_image'),
+    path('products/<int:product_id>/edit/', views.edit_product, name='edit_product'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

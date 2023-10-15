@@ -4,7 +4,6 @@ from hw2app.models import Client, Product, Order
 
 
 class Command(BaseCommand):
-    help = "Generate fake authors and articles."
 
     def add_arguments(self, parser):
         parser.add_argument("client_count", type=int, help="Client count")
