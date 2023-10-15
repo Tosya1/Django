@@ -1,0 +1,18 @@
+{% extends "hw2app/base.html" %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+    <div class='card'>
+        <h3>{{product.name}}</h3>
+        {% if product.image %}
+            <img class="product_image" src="{{ product.image.url }}" alt="product_image">
+        {% endif %}
+        <p><span class='bold'>description:</span> {{product.description}}</p>
+        <p><span class='bold'>price:</span>  {{product.price}}</p>
+        <p><span class='bold'>amount:</span>  {{product.count}}</p>
+        <p><span class='bold'>created at:</span>  {{product.created_at}}</p>
+        <div class='buttons'>
+            <a class='button product_btn card_btn' href="{% url "upload_product_image" product.id %}">Add image</a>
+            <a class='button product_btn card_btn' href="{% url "edit_product" product.id %}">Edit product</a>
+        </div>
+    </div>
+{% endblock content %}

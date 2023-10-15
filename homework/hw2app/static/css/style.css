@@ -1,0 +1,129 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: darkorchid;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: darkmagenta;
+}
+
+header,
+footer {
+  padding: 20px;
+  background-color: lavender;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.container {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+  color: darkmagenta;
+  flex-grow: 1;
+  margin: 50px 0;
+}
+h1 {
+  text-align: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.item {
+  background-color: lavender;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.card {
+  padding: 15px;
+  box-shadow: 12px 12px 4px -7px lavender;
+  background-color: lavenderblush;
+  width: fit-content;
+  min-width: 50%;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.card h3 {
+  text-align: center;
+}
+
+.button {
+  font-weight: 600;
+  display: inline-block;
+  padding: 10px;
+  gap: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0px 4px 10px 1px thistle;
+  background: lavender;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product_btn {
+  font-weight: normal;
+  min-width: 50%;
+  max-width: 75%;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.card_btn {
+  text-align: center;
+  font-weight: bold;
+  background: lavender;
+  margin-top: 10px;
+}
+
+.product_image {
+  width: 350px;
+  height: 385px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.form {
+  margin: 0 auto;
+  width: fit-content;
+}
