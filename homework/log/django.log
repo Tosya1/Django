@@ -1,6 +1,0 @@
-INFO 2023-10-16 02:06:56,081 autoreload 8040 8736Watching for file changes with StatReloader
-INFO 2023-10-16 02:06:59,276 basehttp 8040 16860"GET /clients/ HTTP/1.1" 200 931
-INFO 2023-10-16 02:07:00,294 basehttp 8040 16860"GET /clients/1/ HTTP/1.1" 200 1317
-INFO 2023-10-16 02:07:02,797 basehttp 8040 16860"GET /products/ HTTP/1.1" 200 1649
-INFO 2023-10-16 02:07:04,169 basehttp 8040 16860"GET /products/1 HTTP/1.1" 200 1207
-INFO 2023-10-16 02:07:04,192 basehttp 8040 16860"GET /media/shoes.png HTTP/1.1" 304 0
